@@ -1,0 +1,11 @@
+* [2018-3-30 Fri] Initialize it
+By executing
+#+begin_src sh
+mkdir i18n-page-texts
+cd i18n-page-texts
+npm init
+git init
+tsc --init
+#+end_src
+to Initialize it.
+Then, commit it.
