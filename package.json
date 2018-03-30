@@ -2,10 +2,15 @@
   "name": "i18n-page-texts",
   "version": "1.0.0",
   "description": "Generate or feed missed translated properties of each json file for each locale you provided. Besides, it will generate an interface for Typescript.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "tsc"
   },
+  "bin": "dist/bin.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "http://github.com/ychsue"
@@ -16,5 +21,10 @@
     "translate"
   ],
   "author": "Young-Chung Hsue",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^9.6.1",
+    "google-translate-api": "^2.3.0",
+    "json-ts": "^1.6.4"
+  }
 }

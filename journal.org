@@ -1,5 +1,10 @@
+* [2018-3-30 Fri] Follow the concept shown in the package [[https://github.com/shakyShane/json-ts][json-ts]].
+I modified ~.gitignore~, ~tsconfig.json~ and ~package.json~ to tune this package to behave as that package.
+
+Besides, I also add in a ts code named ~update-pageTexts.ts~ to see what will be happened.
 * [2018-3-30 Fri] Initialize it
 By executing
+
 #+begin_src sh
 mkdir i18n-page-texts
 cd i18n-page-texts
@@ -7,5 +12,6 @@ npm init
 git init
 tsc --init
 #+end_src
+
 to Initialize it.
 Then, commit it.
