@@ -4,7 +4,7 @@
   "description": "Generate or feed missed translated properties of each json file for each locale you provided. Besides, it will generate an interface for Typescript.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "tsc"
+    "test": "tsc && jest"
   },
   "bin": "dist/bin.js",
   "files": [
@@ -26,5 +26,8 @@
     "@types/node": "^9.6.1",
     "google-translate-api": "^2.3.0",
     "json-ts": "^1.6.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.2"
   }
 }

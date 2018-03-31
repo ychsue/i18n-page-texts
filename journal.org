@@ -1,3 +1,12 @@
+* [2018-3-31 Sat] Try to use jest to do the unit test.
+Well, you need to run
+#+begin_src sh
+npm i -g jest
+npm i --save-dev @types/jest
+#+end_src
+before you want to do the unit tests.
+By the way, jest will automatically use babel-jest to pre-transpile your code to run something like 'await'.
+Hm, so that I can test the one with ~Promise~.
 * [2018-3-30 Fri] Follow the concept shown in the package [[https://github.com/shakyShane/json-ts][json-ts]].
 I modified ~.gitignore~, ~tsconfig.json~ and ~package.json~ to tune this package to behave as that package.
 
