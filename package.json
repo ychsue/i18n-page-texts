@@ -1,10 +1,11 @@
 {
   "name": "i18n-page-texts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate or feed missed translated properties of each json file for each locale you provided. Besides, it will generate an interface for Typescript.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "tsc && jest"
+    "test": "tsc && jest",
+    "build": "tsc"
   },
   "bin": "dist/bin.js",
   "files": [

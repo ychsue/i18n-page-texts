@@ -1,4 +1,5 @@
-///<reference path="../node_modules/json-ts/dist/index.d.ts"/>
+#!/usr/bin/env node
+
 import * as fs from 'fs';
 // const translate = require("google-translate-api");
 import * as translate from "./update-pageTexts";
