@@ -4,3 +4,5 @@ coverage/
 dist/**
 .crossbow/**
 package-lock.json
+test/
+i18n-page-texts.json

@@ -1,3 +1,14 @@
+* [2018-4-6 Fri] For node code, you can debug it with VSCode
+If you open this package with VSCode and run the bash code
+#+begin_src sh
+tsc&& node --inspect-brk dist/bin.js
+#+end_src
+then choose *Attach* and run in Debug, you can debug the code with breakpoint and line by line.
+* [2018-4-6 Fri] Can work now.
+After adding the declaration ~"types":"dist/index.d.ts",~ 
+into *package.json* file, I can use ~import~ 
+to use my package in my ~.ts~ file now.
+* [2018-4-6 Fri] Can make directory and write a file forcely even if their sub-directories do not exist.
 * [2018-3-31 Sat] Try to use jest to do the unit test.
 Well, you need to run
 #+begin_src sh

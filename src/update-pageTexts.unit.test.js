@@ -36,8 +36,8 @@ test(`Test the translation: ${JSON.stringify(opts)}`, async ()=>{
     ).toBe(JSON.stringify(
         (()=> {
             let buf = JSON.parse(JSON.stringify(inObj));
-            buf["isoCode"]=undefined;
-            buf["dir"]=undefined;
+            buf["isoCode"]="en";
+            buf["dir"]="lr";
             return buf;})()
     ));
 });

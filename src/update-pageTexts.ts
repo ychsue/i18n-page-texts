@@ -1,11 +1,9 @@
-const translate:any = require("google-translate-api");
+export const translate:any = require("google-translate-api");
+export const languages:any = translate.languages;
 
 export async function updatePageTexts(inObj:any, outObj:any,opts:IoptPTs={from:"auto",to:"en",ignore:[]})
     : Promise<any> {
     for (const key in inObj) {
-        if(opts.ignore.findIndex(st=>st===key)>=0) {
-            continue;
-        }
         if (inObj.hasOwnProperty(key)) {
             const element:any = inObj[key];
             // console.log(`typeof ${typeof element} & element = ${key}`);
@@ -22,7 +20,7 @@ export async function updatePageTexts(inObj:any, outObj:any,opts:IoptPTs={from:"
                 await updatePageTexts(element,outObj[key],opts);
             } else if (typeof element ==="string") {
                 if(!hasTheKey || (typeof outObj[key] !== "string")) {
-                    outObj[key]= (opts.from===opts.to)?element:(await translate(element,opts)).text;
+                    outObj[key]= (opts.from===opts.to ||opts.ignore.findIndex(st=>st===key)>=0)?element:(await translate(element,opts)).text;
                 }
             } else if (typeof element ==="number") {
                 if(!hasTheKey || (typeof outObj[key] !== "number")) {outObj[key]=inObj[key];}
