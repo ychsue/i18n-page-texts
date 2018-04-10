@@ -25,7 +25,7 @@ let config: Iconfig ={
     defaultLang: "en",
     ignoreProperties:["address"],
     outI18nDir: "src/assets/i18n",
-    outJsFile: "src/pageTexts.js",
+    outDefaultFile: "src/defaultPTS.ts",
     outInterfaceFile: "src/IPageTexts.ts",
     interfaceName: "PageTexts",
     eachJsonFileName: "pageTexts.json"
@@ -88,7 +88,7 @@ if(parameters.help===true) {
     process.exit(0);
 } else if(parameters.init) {
     try {
-        fs.writeFileSync(parameters.config,JSON.stringify(config),{encoding: "utf8", flag:"w+"});
+        fs.writeFileSync(parameters.config,JSON.stringify(config,null,2),{encoding: "utf8", flag:"w+"});
         console.log(`file ${parameters.config} has been output.`);
         process.exit(0);
     } catch (error) {
@@ -122,15 +122,35 @@ if(!translate.languages.hasOwnProperty(config.defaultLang)) {
     console.log(`Sorry, the language code "${config.defaultLang}" is not allowed. They should be one of ${Object.keys(translate.languages)}. Please correct it in your config file "${parameters.config}"`);
     process.exit(1);
 }
-//** [2018-04-04 13:01] Generate the pageTexts.js */
-try {
-    fs.writeFileSync(config.outJsFile,
-        `module.exports = `+
-        JSON.stringify(config.inJsonObj,null,2),{encoding: "utf8", flag:"w+"});
-    console.log(`file ${config.outJsFile} is outputted`);
+//** [2018-04-04 13:01] Generate the pageTexts.js or defaultPTS.ts */
+let defaultPTS =config.outDefaultFile||config.outJsFile;
+if(!!config.outJsFile) {
+    console.log(`Warning: the parameter "outJsFile" in the config file "${parameters.config}" will be discarded since I hope that it can be the typescript output, either. Therefore, use "outDefaultFile" instead of it and that file will be in typescript format if its extension is ".ts".`);
+}
+if(!!defaultPTS) { 
+    let data:string= JSON.stringify(config.inJsonObj,null,2);
+    let fileName = defaultPTS.slice(defaultPTS.lastIndexOf('/')+1);
+    let index =fileName.lastIndexOf('.'); 
+    let ext = "";
+    if(index>0) {
+        ext = fileName.slice(index);
+        fileName = fileName.slice(0,index);
+    }
+
+    if(ext.toLowerCase()===".ts"){
+        data = `export const ${fileName}:I${config.interfaceName} =`+data;
+    } else {
+        data = `module.exports = `+data;
+    }
+
+    try {
+    fs.writeFileSync(defaultPTS,
+        data,{encoding: "utf8", flag:"w+"});
+    console.log(`file ${defaultPTS} is outputted`);
 } catch (error) {
     console.error(error);
     process.exit(1);
+}
 }
 //** [2018-04-04 16:07] Generate the IPageTexts */
 try {
@@ -192,7 +212,8 @@ interface Iconfig {
     defaultLang: string,
     ignoreProperties:Array<string>,
     outI18nDir: string,
-    outJsFile: string,
+    outJsFile?: string,  //discarded
+    outDefaultFile: string,
     outInterfaceFile: string,
     eachJsonFileName: string,
     interfaceName: string

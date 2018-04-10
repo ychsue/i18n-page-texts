@@ -249,10 +249,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="562.32091"
+     inkscape:cx="540.06087"
      inkscape:cy="393.66649"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer5"
+     inkscape:current-layer="layer2"
      showgrid="false"
      showguides="false"
      inkscape:window-width="1920"
@@ -322,7 +322,7 @@
        sodipodi:nodetypes="cccccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 37.041666,72.416672 v 5.291666 h 5.291667 z"
+       d="m 34.715157,98.893264 v 5.291666 h 5.291667 z"
        id="path4553"
        inkscape:connector-curvature="0" />
     <text
@@ -563,7 +563,7 @@
          id="tspan4555-3-9"
          x="119.24232"
          y="90.011864"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.19565967">.js</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.19565967">.ts</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.2895956px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.20723987"
@@ -713,7 +713,7 @@
          id="tspan4559-5-8"
          x="166.01534"
          y="72.528915"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#607bd6;fill-opacity:1;stroke-width:0.1488096">pageTexts.js</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#607bd6;fill-opacity:1;stroke-width:0.1488096">defaultPTS.ts</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.95238447px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1488096"
@@ -960,45 +960,45 @@
          style="stroke-width:0.26458332">...</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.83701706px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.20555449"
-       x="227.0657"
-       y="135.74718"
+       style="font-style:normal;font-weight:normal;font-size:3.4383769px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.18419877"
+       x="253.39136"
+       y="121.64396"
        id="text6709"
-       transform="scale(1.0256295,0.97501099)"><tspan
+       transform="scale(0.9190735,1.0880523)"><tspan
          sodipodi:role="line"
          id="tspan6707"
-         x="227.0657"
-         y="135.74718"
-         style="stroke-width:0.20555449">default = require(&quot;pageTexts&quot;);</tspan><tspan
+         x="253.39136"
+         y="121.64396"
+         style="stroke-width:0.18419877">import {defaultPTS} from &quot;defaultPTS&quot;;</tspan><tspan
          sodipodi:role="line"
-         x="227.0657"
-         y="140.54344"
-         style="stroke-width:0.20555449"
+         x="253.39136"
+         y="125.94193"
+         style="stroke-width:0.18419877"
          id="tspan6711" /><tspan
          sodipodi:role="line"
-         x="227.0657"
-         y="145.33972"
-         style="stroke-width:0.20555449"
+         x="253.39136"
+         y="130.2399"
+         style="stroke-width:0.18419877"
          id="tspan6713" /><tspan
          sodipodi:role="line"
-         x="227.0657"
-         y="150.13599"
-         style="stroke-width:0.20555449"
+         x="253.39136"
+         y="134.53787"
+         style="stroke-width:0.18419877"
          id="tspan6715">async update(lang:string) {</tspan><tspan
          sodipodi:role="line"
-         x="227.0657"
-         y="154.93227"
-         style="stroke-width:0.20555449"
+         x="253.39136"
+         y="138.83585"
+         style="stroke-width:0.18419877"
          id="tspan6727">  ...</tspan><tspan
          sodipodi:role="line"
-         x="227.0657"
-         y="159.72853"
-         style="stroke-width:0.20555449"
+         x="253.39136"
+         y="143.13382"
+         style="stroke-width:0.18419877"
          id="tspan6731">  return pts;</tspan><tspan
          sodipodi:role="line"
-         x="227.0657"
-         y="164.52481"
-         style="stroke-width:0.20555449"
+         x="253.39136"
+         y="147.43179"
+         style="stroke-width:0.18419877"
          id="tspan6729">}</tspan></text>
     <text
        xml:space="preserve"

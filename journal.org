@@ -1,3 +1,4 @@
+* [2018-4-10 Tue] Change the field name outJsFile to be outDefaultFile since Angular prefers the .ts file.
 * [2018-4-6 Fri] For node code, you can debug it with VSCode
 If you open this package with VSCode and run the bash code
 #+begin_src sh

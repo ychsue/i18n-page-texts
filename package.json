@@ -25,7 +25,7 @@
   "types": "dist/index.d.ts",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^9.6.1",
+    "@types/node": "^9.6.2",
     "colors": "^1.2.1",
     "google-translate-api": "^2.3.0",
     "json-ts": "^1.6.4"
