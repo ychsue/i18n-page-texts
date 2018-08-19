@@ -23,6 +23,7 @@ let config: Iconfig ={
         }
     },
     defaultLang: "en",
+    folderPrefix: "",
     ignoreProperties:["address"],
     outI18nDir: "src/assets/i18n",
     outDefaultFile: "src/defaultPTS.ts",
@@ -179,13 +180,19 @@ if(config.outI18nDir.lastIndexOf('/')!=(config.outI18nDir.length-1)) {
 }
 
 try {
+    // *** [2018-08-19 17:12] For folderPrefix
+    let prefix = ((!!config.folderPrefix === true) ? config.folderPrefix : '') as string;
+    const pLength = prefix.length;
+
     if(dirs.length==0){
         //**** [2018-04-05 20:15] Create a sub-folder with default language*/
-        forceWriteFile(`${config.outI18nDir}${config.defaultLang}/${config.eachJsonFileName}`,JSON.stringify(config.inJsonObj,null,2));  
-        console.log(`${config.outI18nDir}${config.defaultLang}/${config.eachJsonFileName} is generated.`);  
+        forceWriteFile(`${config.outI18nDir}${prefix}${config.defaultLang}/${config.eachJsonFileName}`,JSON.stringify(config.inJsonObj,null,2));  
+        console.log(`${config.outI18nDir}${prefix}${config.defaultLang}/${config.eachJsonFileName} is generated.`);  
     } else{
         dirs.forEach(code=>{
-            if(translate.languages.hasOwnProperty(code)) {
+            let trueCode = (code.search(prefix)===0) ? code.slice(pLength) : code;
+            console.log(`trueCode is = ${trueCode}`);
+            if(translate.languages.hasOwnProperty(trueCode)) {
                 let outObj={};
                 let fPath = `${config.outI18nDir}${code}/${config.eachJsonFileName}`;
                 try {
@@ -193,7 +200,7 @@ try {
                 } catch (error) {
                     ; // ****** TODO ******
                 }
-                translate.updatePageTexts(config.inJsonObj,outObj,{from:config.defaultLang,to:code,ignore:config.ignoreProperties}).then(
+                translate.updatePageTexts(config.inJsonObj,outObj,{from:config.defaultLang,to:trueCode,ignore:config.ignoreProperties}).then(
                     data => {
                         forceWriteFile(fPath,JSON.stringify(data,null,2));
                         console.log(`${fPath} is updated`);
@@ -213,6 +220,7 @@ interface Iconfig {
     ignoreProperties:Array<string>,
     outI18nDir: string,
     outJsFile?: string,  //discarded
+    folderPrefix?: string, // because windows uwp will use different way to deal with folders whose names are isoCode, I need to use this folderPrefix to change it. Such as 'zh-tw' becomes 'iso_zh-tw' if folderPrefix = 'iso_'.
     outDefaultFile: string,
     outInterfaceFile: string,
     eachJsonFileName: string,

@@ -23,7 +23,7 @@ test('Test the translation: default opts', async ()=>{
     ).toBe(JSON.stringify(
         (()=> {
             let buf = JSON.parse(JSON.stringify(outObj));
-            buf.isoCode = "j-tv"
+            buf.isoCode = "zh-tw"
             return buf;})()
     ));
 });

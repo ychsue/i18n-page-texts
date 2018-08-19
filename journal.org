@@ -1,3 +1,6 @@
+* [2018-8-19 Sun] Because windows uwp will treate those folders whose name is isoCode such as 'zh-tw' in different way, I need to rename those folders. 
+Now, this code can changing those folders' name with a prefix, such as 'iso_'.
+So, once you have a folder name with a prefix, i.e., 'zh-tw' -> 'iso_zh-tw', this code will translate the words based on 'zh-tw'.
 * [2018-4-10 Tue] Change the field name outJsFile to be outDefaultFile since Angular prefers the .ts file.
 * [2018-4-6 Fri] For node code, you can debug it with VSCode
 If you open this package with VSCode and run the bash code
